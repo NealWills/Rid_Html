@@ -1,0 +1,547 @@
+
+<!-- saved from url=(0065)https://www.cxy61.com/program_girl/userinfo/myexercise_show/1815/ -->
+<html class="no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css"></style><style type="text/css">/*
+ * contextMenu.js v 1.4.0
+ * Author: Sudhanshu Yadav
+ * s-yadav.github.com
+ * Copyright (c) 2013 Sudhanshu Yadav.
+ * Dual licensed under the MIT and GPL licenses
+**/
+
+.iw-contextMenu {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10) !important;
+    border: 1px solid #c8c7cc !important;
+    border-radius: 11px !important;
+    display: none;
+    z-index: 1000000132;
+    max-width: 300px !important;
+    width: auto !important;
+}
+
+.dark-mode .iw-contextMenu,
+.TnITTtw-dark-mode.iw-contextMenu,
+.TnITTtw-dark-mode .iw-contextMenu {
+    border-color: #747473 !important;
+}
+
+.iw-cm-menu {
+    background: #fff !important;
+    color: #000 !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: visible !important;
+}
+
+.dark-mode .iw-cm-menu,
+.TnITTtw-dark-mode.iw-cm-menu,
+.TnITTtw-dark-mode .iw-cm-menu {
+    background: #525251 !important;
+    color: #FFF !important;
+}
+
+.iw-curMenu {
+}
+
+.iw-cm-menu li {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif !important;
+    list-style: none !important;
+    padding: 10px !important;
+    padding-right: 20px !important;
+    border-bottom: 1px solid #c8c7cc !important;
+    font-weight: 400 !important;
+    cursor: pointer !important;
+    position: relative !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    line-height: inherit !important;
+    border-radius: 0 !important;
+    display: block !important;
+}
+
+.dark-mode .iw-cm-menu li, .TnITTtw-dark-mode .iw-cm-menu li {
+    border-bottom-color: #747473 !important;
+}
+
+.iw-cm-menu li:first-child {
+    border-top-left-radius: 11px !important;
+    border-top-right-radius: 11px !important;
+}
+
+.iw-cm-menu li:last-child {
+    border-bottom-left-radius: 11px !important;
+    border-bottom-right-radius: 11px !important;
+    border-bottom: none !important;
+}
+
+.iw-mOverlay {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0px !important;
+    left: 0px !important;
+    background: #FFF !important;
+    opacity: .5 !important;
+}
+
+.iw-contextMenu li.iw-mDisable {
+    opacity: 0.3 !important;
+    cursor: default !important;
+}
+
+.iw-mSelected {
+    background-color: #F6F6F6 !important;
+}
+
+.dark-mode .iw-mSelected, .TnITTtw-dark-mode .iw-mSelected {
+    background-color: #676766 !important;
+}
+
+.iw-cm-arrow-right {
+    width: 0 !important;
+    height: 0 !important;
+    border-top: 5px solid transparent !important;
+    border-bottom: 5px solid transparent !important;
+    border-left: 5px solid #000 !important;
+    position: absolute !important;
+    right: 5px !important;
+    top: 50% !important;
+    margin-top: -5px !important;
+}
+
+.dark-mode .iw-cm-arrow-right, .TnITTtw-dark-mode .iw-cm-arrow-right {
+    border-left-color: #FFF !important;
+}
+
+.iw-mSelected > .iw-cm-arrow-right {
+}
+
+/*context menu css end */</style><style type="text/css">@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}</style><style type="text/css">/* This is not a zero-length file! */</style></head><body>
+
+
+
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+     <title>《安东尼》— 里德制作</title>
+     <link rel="stylesheet" href="./index_files/bootstrap.min.css">
+     <script src="./index_files/jquery.min.js"></script>
+     <script src="./index_files/bootstrap.min.js"></script>
+
+     <style>
+         body{text-align:center;margin:0;padding:0;background-color:lightblue;font-color:black;}
+         
+         .logo{width:100%;text-align:center;margin-top:30px}
+            nav ul{margin-top:30px;margin-left:100px;position:absolute;width:1000px;}
+            nav li{float:left;;margin-left:100px;text-align:center;list-style:none}
+            a{color:black;text-decoration:none;font-size:15px;}
+            a:hover{border-bottom:2px solid red;padding-bottom:5px;text-decoration:none;font-size:15px;} 
+         #搜索框{position:absolute;font-size:14px}
+            input{position:absolute;width:130px;border:1px solid #e2e2e2;
+               height:24px;float:left;margin-left:1050px;margin-top:30px;
+               background-image:url(http://wx1.sinaimg.cn/large/006cRQm4ly1fitizphsclj30110110hv.jpg);
+               background-repeat:no-repeat;
+               background-size:24px;
+               padding:0 0 0 40px}
+
+         #myCarousel{margin-top:90px;width:100%;}
+             #myCarousel p{width:1000px;position:absolute;top:300px;left:200px;font-size:50px;color:white;font-family:STXingkai;}
+
+             .box{height:200px; padding:10px; margin-bottom:20px;}
+             .carousel-inner .item img{width:100%;}
+             .container{margin-top:50px;}
+             .container .box img{height:150px;}
+
+         @media (min-width:992px){
+             .container{width:940px;}
+         }
+         @media (min-width:12000px){
+             .container{width:1170px;}
+         }
+         @media (min-width:1700px){
+             .container{width:1470px;}
+         }
+       
+         h1{color:red;padding-top:40px;letter-spacing:10px;font-family:KaiTi;}  
+         .正文{line-height: 30px;}
+
+     #卧室写字{width:1000px;height:2030px;margin:0 auto;background-color: #E5E5E5;}
+         .书{height:1040px;}
+         .书 img{width:200px;height:200px;margin:30px 0px 30px 10px;float: left;}
+         .书 p{width:240px;height:200px;margin:30px 20px 30px 15px;float:left;text-align:left;font-size:14px;display:flex;align-items:center;padding-bottom: 15px;}
+         .电影{position:relative;margin:60px 100px 0px 100px;border:none;border-top:1px solid red;}
+         .框标题{position:absolute;left:35%;top:-1em;line-height:2em;padding:0 1em;font-size:14px;color:red;background-color:#E5E5E5;}
+         .电影 img{width:350px;height:466px;float: left;margin:50px 30px 0px 40px;}
+         .电影 p{margin:60px 40px 0px 20px;text-align:left;line-height: 30px;}
+
+     #厨房做饭{width:1000px;height:900px;margin:0 auto;background-color: #E5E5E5;}
+         .胶片{width:250px;height:400px;float: left;margin:20px 0px 0px 60px;background-color:#FAFAD2;}
+         .胶片 img{width:220px;height:264px;margin:30px 15px 0px 15px;}
+         .胶片 p{width:235px;height:130px;float:bottom;margin:20px 5px 0px 10px;text-align:left;line-height:25px;font-size:16px;font-family:STXingkai;}
+
+     #伦敦花艺{width:1000px;height:1510px;margin:0 auto;background-color: #E5E5E5;}
+         .翻转图{height:540px;}
+         .turn{perspective: 400px;transform-style: preserve-3d;float: left;}
+         .turn, .box花{width: 250px;height: 250px;border-radius:50px;margin:10px 30px 10px 30px;}
+         .box花{backface-visibility: hidden;transition: 1s;transform-style:preserve-3d;position:absolute;text-align: center;}
+         .box花 img{width: 250px;height: 250px;border-radius:50px;}
+         .box字1,.box字2,.box字3,.box字4,.box字5,.box字6{background-color:lightblue;}
+         .box字1,.box字2,.box字3{transform: rotateX(-180deg);}
+         .box字4,.box字5,.box字6{transform: rotateY(-180deg);}
+
+         .turn:hover .box花1{transform: rotateX(180deg);}
+         .turn:hover .box字1{transform: rotateX(0deg);}
+         .turn:hover .box花2{transform: rotateX(180deg);}
+         .turn:hover .box字2{transform: rotateX(0deg);}
+         .turn:hover .box花3{transform: rotateX(180deg);}
+         .turn:hover .box字3{transform: rotateX(0deg);}
+         .turn:hover .box花4{transform: rotateY(180deg);}
+         .turn:hover .box字4{transform: rotateY(0deg);}
+         .turn:hover .box花5{transform: rotateY(180deg);}
+         .turn:hover .box字5{transform: rotateY(0deg);}
+         .turn:hover .box花6{transform: rotateY(180deg);}
+         .turn:hover .box字6{transform: rotateY(0deg);}
+
+             .滚动图
+             .flower{height:250px;direction:left;scrollamount:5;deplay:0;}
+             .flower img{height:250px;}
+
+     #设计品牌{width:1000px;height:2200px;margin:0 auto;background-color: #E5E5E5;}   
+         .方形框{position:relative;margin:60px 100px 60px 100px;height:520px;border:2px solid red;}
+         .title{position:absolute;left:10%;top:-1em;line-height:2em;padding:0 0.5em;font-size:35px;color:red;background-color:#E5E5E5;}
+         .方形框 img{width:350px;height:200px;margin:35px 10px 15px 50px;float:left;}
+         .方形框 p{line-height:30px;}
+     
+     #浮生若梦{width:1000px;height:1100px;margin:0 auto;background-color: #E5E5E5;padding-bottom:100px;}
+      video{width: 450px;height:320px;margin:25px 10px 25px 30px;float: left;}
+
+     .空白{width:100%;height:200px;}
+     footer{width:100%;height:100px;background-color:#E5E5E5;}
+         .图标{width:500px;margin:40px 100px 20px 200px;}
+         .图标 nav li{float:left;list-style:none}
+         .图标 img{width:40px;height:40px;}
+
+    </style>
+
+
+
+      <div class="logo">
+            <img src="./index_files/psb" style="height:200px;width:200px"></div>
+        <nav>
+            <ul>
+                <li><a href="https://www.cxy61.com/program_girl/userinfo/myexercise_show/1815/#%E5%8D%A7%E5%AE%A4%E5%86%99%E5%AD%97">卧室写字</a></li>
+                <li><a href="https://www.cxy61.com/program_girl/userinfo/myexercise_show/1815/#%E5%8E%A8%E6%88%BF%E5%81%9A%E9%A5%AD">厨房做饭</a></li>
+                <li><a href="https://www.cxy61.com/program_girl/userinfo/myexercise_show/1815/#%E4%BC%A6%E6%95%A6%E8%8A%B1%E8%89%BA">伦敦花艺</a></li>
+                <li><a href="https://www.cxy61.com/program_girl/userinfo/myexercise_show/1815/#%E8%AE%BE%E8%AE%A1%E5%93%81%E7%89%8C">设计品牌</a></li>
+                <li><a href="https://www.cxy61.com/program_girl/userinfo/myexercise_show/1815/#%E6%B5%AE%E7%94%9F%E8%8B%A5%E6%A2%A6">浮生若梦</a></li>
+            </ul>
+            <div id="搜索框"><input type="text" name="search" placeholder="请输入关键字"></div>
+        </nav>     
+
+     <div id="myCarousel" class="carousel slide"> 
+
+         <ol class="carousel-indicators">
+             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+             <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+             <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+         </ol>
+
+      <div class="carousel-inner">
+         <div class="item active">
+             <img src="./index_files/psb(1)" alt="1">
+             <div class="carousel-caption">岁月漫长</div>   
+         </div>
+         <div class="item">
+             <img src="./index_files/psb(2)" alt="2">
+             <div class="carousel-caption">有生之年</div>
+         </div>
+         <div class="item">
+             <img src="./index_files/psb(3)" alt="3">
+             <div class="carousel-caption">欣喜相逢</div>
+         </div>   
+      </div>          
+           <p>So,would you like to become...one of my secrets?</p>
+          
+     </div>
+
+     <div class="container">
+     <div class="row">
+         <div class="box col-lg-2 col-lg-offset-2 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+             <header>
+                 <img src="./index_files/psb(4)" alt="">
+             </header>
+                 <p></p>    
+         </div>
+
+         <div class="box col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+             <header>
+                 <img src="./index_files/psb(5)" alt="">
+             </header>   
+         </div>
+
+          <div class="box col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+             <header>
+                 <img src="./index_files/psb(6)" alt="">
+             </header>    
+         </div>
+
+         <div class="box col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+             <header>
+                 <img src="./index_files/psb(7)" alt="">
+             </header>  
+         </div>
+    </div>
+    </div>
+
+     <section id="卧室写字">
+     <h1>卧室写字</h1>
+     
+     <p class="正文"><br>看着微博上大家催新书的留言 还有发的和绿色有关的照片<br>我在想 十年多 你们已经变成什么样子了呢<br>如果这么多年下来<br>又买了《陪安东尼度过漫长岁月》这本书<br>想必你变化也不大吧<br>只是从二十岁左右的年轻气盛 成为三十左右的宠辱不惊了吧<br>这么多年陪伴下来 我衷心地希望你们好<br><br></p>
+     
+     <div class="书">
+         <img src="./index_files/psb(8)" alt="红">
+         <p>每次打开文件夹 看见那照片的时候都会觉得刺眼 会想起高中毕业的那年夏天 旭在麦当劳里等我<br><br>我匆匆赶到的时候他就是这样的笑容 他还一直埋怨 怎么来得这么晚呀 这么晚 然后伸出手 揉乱了我额上的头发</p>
+         <img src="./index_files/psb(9)" alt="里德">
+         <p>咖啡末本身也是咖啡的一部分 你要享受咖啡的味道 就也要忍受咖啡末儿的酸涩口感 不过只要你把咖啡放一放 咖啡末儿就会沉到杯底<br><br>嗯 我是说 如果你口渴了 应该喝水 咖啡是用来享受的</p>
+         <img src="./index_files/psb(10)" alt="橙">
+         <p>又是红灯 他的手臂伸直 握在方向盘上 十点钟和两点钟的位置上 不知道为什么 我突然伸过脑袋 咬了他的胳膊<br><br>他有些惊讶 又装作镇定地看着我 笑说 这是你表达友好的方式么 你该不会是 澳洲土著吧</p>
+         <img src="./index_files/psb(11)" alt="云治">
+         <p>有的时候 当你做了一件对的事 或者在某方面有所成就的时候 你要知道肯定自己 不要对自己太苛刻<br><br>你看你做的这颗心 颜色多么饱满 质地也温润 这是我见过的最好的心形的瓷器啊 这简直是艺术品</p>
+         <img src="./index_files/psb(12)" alt="黄">
+         <p>第一次很正式听到这个词 应该是在Sex and the City里面 Carrie刚去法国 在酒店门口下车 和礼宾说的一句 风情万种的Bonjour <br><br>恰恰就是法国给我的印象 利索又不单调 随意却又执着 法国的调调</p>
+         <img src="./index_files/psb(13)" alt="尔本">
+         <p>喜欢这电影 其实也没啥 连个故事都没有 都是琐碎的 情绪化的 片段的 但是因为演员的表情 动作 镜头运用得恰到好处 让我觉得这个电影非常迷人<br><br>电影结束的时候 有吐在手上的口香糖 忽然被拉长一样的空虚感<br></p>
+         <img src="./index_files/psb(14)" alt="绿">
+         <p>雨天打伞 入秋了可以穿风衣 正式场合要穿西装平视一件白T恤 冷了就加一件 不该穿的就不穿 能放到身上穿着的 也都能一件件折好放下<br><br>这是我现在穿衣服的概念 对于人生的理解可能也是这样</p>   
+         <img src="./index_files/psb(15)" alt="二人饭店">
+         <p>墨尔本夏天的时候 因为我懒得做早饭 所以每天早上起来基本上就是喝一杯水 然后吃一罐水果味的酸奶<br><br>有一天小托看到了 他说 其实你吃这个酸奶也不是很健康 里面有很多糖 还有添加剂 我给你推荐一个牌子的酸奶 蓝色盖子的 纯天然 一点糖都没有放</p>
+     </div>
+
+     <div class="电影">
+        <span class="框标题">同名电影:《陪安东尼度过漫长岁月》</span>
+         <img src="./index_files/psb(16)">
+         <p>出国十年了 刚开始在墨尔本的街道上走 觉得恍惚 感觉自己怎么就置身他乡了 看着街上一个个高挑的黄毛 听着外国话 闻着空气里香水的味道 心想这里不是我的家 但是我要好好地过 于是挺胸抬头地走<br><br>这十年 一步步走来 没有大起大落 但也有很多事发生了<br><br>比如 我从开始的金融专业换成了厨师 学习了酒店管理和室内设计 出了七八本书 去过十多个国家 买了房子 谈过几次恋爱 现在 由我的书改编成的电影要搬上大荧幕了 电影的名字就叫《陪安东尼度过漫长岁月》<br><br>它不是我本身 却会闪耀着似曾相识的光辉 它也不会和你阅读时感受到的轮廓一模一样 却一定会映出 曾经陪伴的日子<br></p>
+    </div>
+    
+    </section>
+    
+    <section id="厨房做饭">
+    <h1>厨房做饭</h1>
+         <p class="正文"><br>有的时候 有人问<br>你又写东西 又做室内设计 又是厨师<br>听起来很疯狂<br><br>我觉得其实也不会<br>对人生的思考 生活环境的要求 还有吃饭<br>这些都是生活的基本需求<br>如果想要做的好 其实都有共性<br>就是要心里有爱 愿意分享<br>且脚踏实地的生活&nbsp;</p>   
+         <div class="胶片">
+             <img src="./index_files/psb(17)">
+             <p>我在那些有名胜古迹 迷人风景的地方 运河边的花园里喝酒 晚上买菜回家做饭</p>
+         </div>
+         <div class="胶片">
+             <img src="./index_files/psb(18)">
+              <p>每当做菜的时候 我就在想 我竟然还是单身 这世界 也真 奇怪</p>
+         </div>
+         <div class="胶片">
+             <img src="./index_files/psb(19)">
+              <p>午餐剩咖喱 面包 还有果汁~ 小甜甜马上搬进来 有个室友做饭更带劲</p>
+         </div>
+    
+    </section> 
+
+     <section id="伦敦花艺">
+     <h1>伦敦花艺</h1>
+         <p class="正文"><br>Jo说她做鲜花学校快三年了 我是她第二个男生学生<br>第一天我到教室的时候 她还以为我走错了 感觉我迷迷糊糊的就进来坐下<br> 她还特意的回去快速的看了一下报名表 确定是我<br><br>她说第一个来上课的男生 也是从澳洲来的<br>是日本和澳洲的混血 也特别好看 才16岁 他妈妈给他订的插花的课程<br>他也是迷迷糊糊的感觉<br>上课的时候会在旁边架个 go pro 给自己录像<br><br></p>
+         
+         <div class="翻转图">
+         <div class="turn" ontouchstart="this.classList.toggle(&#39;hover&#39;);">
+             <div class="box花 box花1">
+             <img src="./index_files/psb(20)" alt="">
+             </div>
+             <div class="box花 box字1">
+             <p><br>2016-5-18<br><br>12号 新娘手捧  送给你～</p>
+             </div>
+         </div>
+         <div class="turn" ontouchstart="this.classList.toggle(&#39;hover&#39;);">
+             <div class="box花 box花2">
+             <img src="./index_files/psb(21)" alt="">
+             </div>
+             <div class="box花 box字2">
+             <p><br>2016-6-8<br><br>为什么叶子比花多<br>而且花骨朵多过盛开的？<br><br>因为在自然界里就是这样<br>没有特意的把最美的花放到一起<br>也不追求 弄一个球 或者三角<br>只希望在手里捧一个花园 或者一个春天</p>
+             </div>
+         </div>
+         <div class="turn" ontouchstart="this.classList.toggle(&#39;hover&#39;);">
+             <div class="box花 box花3">
+             <img src="./index_files/psb(22)" alt="">
+             </div>
+             <div class="box花 box字3">
+             <p><br>2016-8-17<br><br>没遇到合适的之前<br>把自己的日子过好<br>千万别为父母或者任何人凑合<br>我宁愿看到你一个人开心<br>也不想看到你两个人将就......<br><br>我说好 谢谢 妈妈</p>
+             </div>
+         </div>
+         
+         <div class="turn" ontouchstart="this.classList.toggle(&#39;hover&#39;);">
+             <div class="box花 box花4">
+             <img src="./index_files/psb(23)" alt="">
+             </div>
+             <div class="box花 box字4">
+             <p><br>2016-6-29<br><br>harry, jess, 小茫来伦敦<br><br>我们一起上了插花课</p>
+             </div>
+         </div>
+         <div class="turn" ontouchstart="this.classList.toggle(&#39;hover&#39;);">
+             <div class="box花 box花5">
+             <img src="./index_files/psb(24)" alt="">
+             </div>
+             <div class="box花 box字5">
+             <p><br>2016-5-12<br><br>老师说 班级里终于有个男生了</p>
+             </div>
+         </div>
+         <div class="turn" ontouchstart="this.classList.toggle(&#39;hover&#39;);">
+             <div class="box花 box花6">
+             <img src="./index_files/psb(25)" alt="">
+             </div>
+             <div class="box花 box字6">
+             <p><br>2016-9-22<br><br>插花课结束 我要回去工作赚钱了</p>
+             </div>
+         </div>
+         </div>
+
+     <div>
+     <p class="正文"><br><br>老师说 亮 你知道么 你不在的时候 我们经常讨论你<br>我说是么 希望都是好事<br>她说当然 你后来不来上课了 我们都很想你<br>如果当天做的是比较花园风格的 就会说 亮一定很喜欢这个<br><br>我笑<br><br></p>
+     </div>
+     <div class="滚动图">
+     <marquee class="flower">
+         <img src="./index_files/psb(26)" alt="">
+         <img src="./index_files/psb(27)" alt="">
+         <img src="./index_files/psb(28)" alt="">
+         <img src="./index_files/psb(29)" alt="">
+         <img src="./index_files/psb(30)" alt="">
+         <img src="./index_files/psb(31)" alt="">
+         <img src="./index_files/psb(32)" alt="">
+         <img src="./index_files/psb(33)" alt="">
+         <img src="./index_files/psb(34)" alt="">
+         <img src="./index_files/psb(35)" alt="">
+         <img src="./index_files/psb(36)" alt="">
+         <img src="./index_files/psb(37)" alt="">
+         <img src="./index_files/psb(38)" alt="">
+         <img src="./index_files/psb(39)" alt="">
+         <img src="./index_files/psb(40)" alt="">
+         <img src="./index_files/psb(41)" alt="">
+         <img src="./index_files/psb(42)" alt="">
+         <img src="./index_files/psb(43)" alt="">
+         <img src="./index_files/psb(44)" alt="">
+         <img src="./index_files/psb(45)" alt="">
+         <img src="./index_files/psb(46)" alt="">
+         <img src="./index_files/psb(47)" alt="">
+         <img src="./index_files/psb(48)" alt="">
+         <img src="./index_files/psb(49)" alt="">
+         <img src="./index_files/psb(50)" alt="">
+         <img src="./index_files/psb(51)" alt="">
+     </marquee>
+     </div>
+     </section>
+
+     <section id="设计品牌">
+     <h1>设计品牌</h1>
+     <p class="正文"><br>2014年<br>安东尼和他的朋友们<br>在墨尔本成立 Antone Creative 设计工作室<br>专注于创造小而美的设计<br>捕捉故事性的瞬间 记录并分享身边的故事<br>在不设限的设计领域中<br>一期一会地与不同的时光 人物 创意相遇<br><br>产品在以下三个中国电商平台<br>均有售卖</p>
+         
+         <div class="方形框">
+         <span class="title">淘 宝</span>
+         <img src="./index_files/psb(52)" alt="">
+         <img src="./index_files/psb(53)" alt="">
+         <p><br><br>这几年都做了些什么呢<br>在墨尔本成立了自己的工作室 Antone Creative<br>又去了几个国家 和两个人谈过恋爱<br>《陪安东尼度过漫长岁月》作为电影被搬上大荧幕<br>到中国各大城市走了一圈<br>看到了很多读者的面孔<br>去伦敦住了半年 学习了插花和陶艺<br>后来成立了自己的内衣品牌 Hout&amp;River<br>这么一想好像也就那样<br>没做什么<br><br>有些激动 有自己的淘宝店了<br>希望大家能喜欢</p>
+         </div>
+         
+         <div class="方形框">
+         <span class="title">氧 气</span>
+         <img src="./index_files/psb(54)" alt="">
+         <img src="./index_files/psb(55)" alt="">
+         <p><br><br>曾与 Mimi Holliday 合作过女生的内衣<br>如今安东尼成立了自己的品牌 Hout&amp;River<br>主打贴身衣物与居家日常<br>“Hout”在荷兰语中有“住在森林中的人”之意<br>而“River”代表川流不息的溪水与河流<br>寓意成长过程中<br>若水般随遇而安地闯荡<br><br>松柏长青 散发木调清香<br>无需费心养护<br>随阳关 空气 还有你 一起呼吸成长<br>就能呈现四季更迭的自然模样<br></p>
+         </div>
+
+          <div class="方形框">
+         <span class="title">良 仓</span>
+         <img src="./index_files/psb(56)" alt="">
+         <img src="./index_files/psb(57)" alt="">
+         <p><br><br>火柴盒整体是斑驳的蓝色<br>寓意着《小王子》里的天空和井水<br>表面印着烫金做工的星星与星球<br>火柴盒背面印着故事里的经典对白<br>火柴保留着最初的用意<br>在满足需求或馈赠之余<br>为你创造温暖<br><br>红橙黄彩虹笔记本<br>由安东尼彩虹书系列延伸而来<br>封底位置特别设计明信片口袋<br>亦可放置一些随身卡片<br>在这样一个妙趣横生的时代<br>每一段青春 都值得纪念</p>
+         </div>
+     </section> 
+
+    <section id="浮生若梦">
+         <h1>浮生若梦</h1>
+         <p class="正文"><br>人生可以毫无惊奇 也可以处处是奇迹<br>其实 奇迹不是像梦一般的颜色和味道<br>奇迹就是我们每一天的生活<br>美好的事情总会到来<br>只要你简单干净 聪明单纯<br>就会发现<br>奇迹不是降临 它是因你而来<br></p>
+         <video src="https://gslb.miaopai.com/stream/n3B~Ozq8SnaTr2oA4TirUQ__.mp4?yx=&amp;refer=weibo_app&amp;Expires=1512697633&amp;ssig=tMzrmDNkOK&amp;KID=unistore,video" controls="controls"></video>
+         <video src="https://gslb.miaopai.com/stream/W1t6tEYlyWMyhnfihOSFjewUKFQFYaFh.mp4?yx=&amp;refer=weibo_app&amp;Expires=1512704418&amp;ssig=6tqHWPgb%2Fv&amp;KID=unistore,video" controls="controls"></video>
+         <video src="https://gslb.miaopai.com/stream/~yZBoAFvk6Vznv~-KOuCPITLO6s-FDYngp7DFg__.mp4?yx=&amp;refer=weibo_app&amp;mpflag=32&amp;mpr=1507130847&amp;Expires=1512697557&amp;ssig=TB4rQhIrdd&amp;KID=unistore,video" controls="controls"></video>
+         <video src="https://gslb.miaopai.com/stream/qb8TohRHaIToiXYQ7WVKFnhcwskmHciBgcjT1Q__.mp4?yx=&amp;refer=weibo_app&amp;mpflag=32&amp;mpr=1511754867&amp;Expires=1512697557&amp;ssig=jOT%2FlW2249&amp;KID=unistore,video" controls="controls" "=""></video>      
+    </section>   
+
+     <div class="空白"></div>   
+     <footer>
+         <div class="图标">
+         <nav>
+             <ul>
+                 <li><a href="https://weibo.com/antony0411?topnav=1&amp;wvr=6&amp;topsug=1&amp;is_all=1"><img src="./index_files/psb(58)" alt=""></a></li>
+                 <li><a href="https://shop504145738.taobao.com/shop/view_shop.htm?shop_id=504145738"><img src="./index_files/psb(59)" alt="淘宝"></a></li>
+                 <li><a href="http://www.o2bra.com.cn/brands/517"><img src="./index_files/psb(60)" alt=""></a></li>
+                 <li><a href="http://www.iliangcang.com/i/search/?keywords=%E5%AE%89%E4%B8%9C%E5%B0%BC"><img src="./index_files/psb(61)" alt=""></a></li>
+             </ul>
+         </nav>
+         </div>                    
+     </footer>    
+
+     <script>
+         $(function(){
+            $('.carousel').carousel({
+                interval:2000,
+                wrap:true
+            })
+         }) 
+     </script>  
+
+
+<script type="text/javascript"></script></body></html>
